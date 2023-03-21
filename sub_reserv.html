@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>관람예약</title>
+    <link rel="stylesheet" href="./css/my_reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/sub_reserv.css" />
+    <script src="./include.js"></script>
+    <script src="./css/common.js" defer></script>
+    <script src="./css/sub_reserv.js" defer></script>
+  </head>
+  <body>
+    <div class="top_banner"></div>
+    <header class="hd mw"></header>
+
+    <main class="reserv mw">
+      <div class="title">예약마당</div>
+      <section class="reserv_con">
+        <ul class="menu">
+          <li>관람 예약</li>
+          <li>전시해설 예약</li>
+          <li>특별 프로그램 예약</li>
+          <li>봉사활동 예약</li>
+        </ul>
+        <ul class="contents">
+          <li class="con_list on">
+            <ul class="sort">
+              <li class="on">개인</li>
+              <li>단체</li>
+            </ul>
+            <ul>
+              <li class="accordion on">
+                <div class="when">
+                  <div class="acc_title">1. 날짜 및 회차 선택</div>
+                  <div class="acc_detail">
+                    <div class="calendar"></div>
+                    <div class="times">
+                      <div>선택한 날짜</div>
+                      <div class="times_title">
+                        <span>선택</span>
+                        <span>회차</span>
+                        <span>시간</span>
+                        <span>예약상태</span>
+                      </div>
+                      <ul class="times_detail">
+                        <li>
+                          <label>
+                            <input type="radio" name="time" />
+                            <span>1</span>
+                            <span>15:00</span>
+                            <span>예약가능</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <input type="radio" name="time" />
+                            <span>2</span>
+                            <span>16:00</span>
+                            <span>예약가능</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <input type="radio" name="time" />
+                            <span>3</span>
+                            <span>17:00</span>
+                            <span>예약가능</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <input type="radio" name="time" />
+                            <span>4</span>
+                            <span>18:00</span>
+                            <span>예약가능</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <input type="radio" name="time" />
+                            <span>5</span>
+                            <span>19:00</span>
+                            <span>예약가능</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <input type="radio" name="time" />
+                            <span>6</span>
+                            <span>20:00</span>
+                            <span>예약가능</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="howmany on">
+                  <div class="acc_title">2. 인원 선택</div>
+                  <div class="acc_detail">
+                    <div>
+                      <strong>유의사항</strong>
+                      <p>
+                        예약 변경 및 취소는 방문 예정일 1일 전까지 가능합니다.
+                        <br />
+                        관람 예약은 신청 가능 날짜에서 한 번만 신청하실 수
+                        있습니다. <br />
+                        개인 관람예약은 최대 19명까지 가능하며 20명 이상시 단체
+                        관람으로 예약해주시기 바랍니다. <br />
+                        입장 마감시간은 예약시간 이후 10분 후 입니다.
+                      </p>
+                    </div>
+                    <div>
+                      <span>예약인원</span>
+                      <input type="text" />
+                      <span>명</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="personal">
+                  <div class="acc_title">3. 개인정보 입력</div>
+                  <div class="acc_detail">개인정보 들어가는곳</div>
+                </div>
+              </li>
+              <li class="accordion">
+                <div>
+                  <div class="acc_title">1. 날짜 및 회차 선택</div>
+                  <div class="acc_detail">달력 및 회차 들어가는곳</div>
+                </div>
+                <div>
+                  <div class="acc_title">2. 인원 선택</div>
+                  <div class="acc_detail">인원 들어가는곳</div>
+                </div>
+                <div>
+                  <div class="acc_title">3. 개인정보 입력</div>
+                  <div class="acc_detail">개인정보 들어가는곳</div>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="con_list">컨텐츠2</li>
+          <li class="con_list">컨텐츠3</li>
+          <li class="con_list">컨텐츠4</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="ft">
+      <!-- <div class="ft_wrap mw">
+        <div class="ft_logo">
+          <img src="./image/logo_main.png" alt="하단로고" />
+        </div>
+        <div class="ft_desc">
+          <p>
+            (34128) 대전광역시 유성구 과학로 213-48 (신성동 7-13) <br />
+            TEL. 042-863-8762, 8763 <br />
+            FAX. 042-863-8761 <br />
+            Copyright &#169; 2017 Daejeon Observatory. All rights reserved
+          </p>
+        </div>
+        <div class="shortcut">
+          <select name="dropdown1" id="gov">
+            <option value="drop1_def">기관사이트 바로가기</option>
+            <option value="gov1">대전광역시</option>
+            <option value="gov1">한국천문연구원</option>
+            <option value="gov1">국립중앙과학관</option>
+            <option value="gov1">(사)한국천문우주과학관협회</option>
+            <option value="gov1">대덕연구개발특구</option>
+          </select>
+          <select name="dropdown2" id="local">
+            <option value="drop2_def">지역별 천문대 바로가기</option>
+            <option value="local1">별마로천문대</option>
+            <option value="local2">김해천문대</option>
+            <option value="local3">곡성섬진강천문대</option>
+            <option value="local4">국토정중앙천문대</option>
+            <option value="local5">소백산천문대</option>
+            <option value="local6">충주고구려천문과학관</option>
+            <option value="local7">칠갑산천문대</option>
+            <option value="local8">보현산천문대</option>
+            <option value="local9">예천천문우주센터</option>
+            <option value="local10">서귀포천문과학문화관</option>
+          </select>
+        </div>
+      </div> -->
+    </footer>
+
+    <script>
+      document.querySelector(".top_banner").innerHTML = topbanner;
+      document.querySelector("header.hd").innerHTML = header;
+      document.querySelector(".ft").innerHTML = footer;
+    </script>
+  </body>
+</html>

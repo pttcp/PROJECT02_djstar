@@ -46,7 +46,7 @@ body a {
 
 /* <------------------ header 영역 시작 ------------------> */
 .hd {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -85,7 +85,7 @@ body a {
   background-position: 50% 60%;
   position: absolute;
   left: 0;
-  top: 160px;
+  top: 155px;
   transition: 0.3s;
   opacity: 0.5;
 }
@@ -102,6 +102,10 @@ body a {
 .gnb > li > a {
   /* border: 1px solid springgreen; */
   padding: 2rem;
+}
+.gnb > li:hover > a {
+  color: var(--main_c5);
+  transition: 0.5s;
 }
 
 .gnb > li:hover .sub {
@@ -135,6 +139,10 @@ body a {
   /* border: 1px solid tomato; */
   padding: 0.5rem 1rem;
   font-size: 1rem;
+}
+.sub > li:hover > a {
+  color: var(--main_c5);
+  transition: 0.5s;
 }
 
 .hd_icons {
@@ -173,7 +181,7 @@ body a {
   margin-bottom: 3rem;
 }
 .main > * {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 /* <--------------------------- sec 영역 시작 ---------------------------> */
@@ -186,6 +194,10 @@ body a {
 }
 .sec > * {
   padding-top: 1rem;
+}
+
+.stars {
+  border: 1px solid lightgreen;
 }
 
 .sec > p:first-of-type {
@@ -370,6 +382,10 @@ body a {
   border-bottom: 1px solid #ffffff;
   margin-bottom: 0.5rem;
 }
+.noti_list > li:hover > a {
+  background-color: #99999930;
+}
+
 .noti_list > li p:first-of-type {
   /* border: 1px solid tomato; */
   width: 75%;
@@ -575,7 +591,7 @@ body a {
 
   .hd.on::before {
     content: "";
-    width: 50vw;
+    width: 300px;
     height: 100vh;
     background-color: var(--main_c2);
     position: fixed;
@@ -600,7 +616,14 @@ body a {
     flex-direction: column;
     right: 0;
     top: 120px;
+    width: 300px;
+    margin: auto;
   }
+  .hd.on .gnb a {
+    border: 1px solid red;
+    width: 100%;
+  }
+
   .hd.on .hd_icons {
     top: 1.5rem;
     right: 6rem;
@@ -618,4 +641,48 @@ body a {
     right: 2rem;
     top: 2rem;
   }
+
+  /* .main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .sec {
+    border: 1px solid yellow;
+    grid-column: 1/4;
+    order: 1;
+  }
+  .weather {
+    order: 2;
+  } */
+
+  /* .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-areas:
+      "a a a"
+      "b c d"
+      "e e e";
+  }
+  .sec {
+    grid-area: a;
+    order: 1;
+  }
+  .weather {
+    grid-area: b;
+    order: 2;
+  }
+  .notice {
+    grid-area: c;
+    order: 3;
+  }
+  .popup_zone {
+    grid-area: d;
+    order: 4;
+  }
+  .facility {
+    grid-area: e;
+    order: 5;
+  } */
 }

@@ -1,3 +1,9 @@
+const $ham = document.querySelector(".ham");
+const $hd = document.querySelector(".hd");
+$ham.addEventListener("click", () => {
+  $hd.classList.toggle("on");
+});
+
 function loadItems() {
   return fetch(
     "https://www.7timer.info/bin/api.pl?lon=127.354&lat=36.382&product=civillight&output=json"
