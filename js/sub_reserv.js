@@ -1,3 +1,24 @@
+// <---------------------------------- 아코디언 메뉴 js ------------------------------------->
+const $accLi = document.querySelectorAll(".accordion>ul>li");
+const $accTitle = document.querySelectorAll(".acc_title");
+
+function toggleAccordion() {
+  const thisItem = this.parentNode;
+  // console.log(thisItem);
+  $accLi.forEach((item) => {
+    if (thisItem == item) {
+      thisItem.classList.toggle("on");
+      return;
+    }
+    item.classList.remove("on");
+  });
+}
+
+$accTitle.forEach((item) => {
+  item.addEventListener("click", toggleAccordion);
+});
+
+// <---------------------------------- 달력 js ------------------------------------->
 function CalendarControl() {
   const calendar = new Date();
   const calendarControl = {

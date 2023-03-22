@@ -10,6 +10,7 @@
   --font1: bold 20px "Gowun Batang", serif;
   --font2: 400 14px "Gowun Batang", serif;
   --font3: 700 32px "Noto Sans KR", sans-serif;
+  --font4: bold 16px "Gowun Batang", serif;
   font-family: "Gowun Batang", serif;
   background-image: url(../image/index_bg.png);
   color: #ffffff;
@@ -556,7 +557,7 @@ body a {
 }
 
 .ft_wrap {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   justify-content: space-between;
   align-items: center;

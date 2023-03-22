@@ -1,4 +1,8 @@
 /* <----------------------------------------- 예약페이지 시작 --------------------------------------------------> */
+.reserv {
+  margin-bottom: 5rem;
+}
+
 .reserv > * {
   border: 1px solid red;
 }
@@ -18,10 +22,17 @@
 }
 
 .menu > li {
-  border: 1px solid blue;
+  border: 2px solid #ffffff;
+  background-color: var(--main_c2);
   font-weight: bold;
   padding: 0.5rem 1rem;
   margin-bottom: 3rem;
+  margin-right: 2px;
+}
+.menu > li.on {
+  border: 2px solid var(--main_c4);
+  color: #000000;
+  background-color: var(--main_c4);
 }
 
 .con_list {
@@ -35,32 +46,28 @@
 .sort {
   display: flex;
 }
-.sort > li {
+.sort > input {
   padding: 0.5rem 1rem;
   border: 2px solid #ffffff;
   border-bottom: none;
   background-color: var(--main_c2);
-  font-weight: bold;
+  font: var(--font4);
+  color: #ffffff;
+  cursor: pointer;
 }
-.sort > li.on {
+.sort > input.on {
   border: none;
   color: #000000;
   background-color: var(--main_c4);
 }
 
 /* <----------------------- 아코디언 메뉴 ---------------------------> */
-.accordion {
-  display: none;
-}
-.accordion.on {
-  display: block;
-}
 
-.accordion > div {
+.accordion > ul > li {
   max-height: 35px;
   overflow: hidden;
 }
-.accordion > div.on {
+.accordion > ul > li.on {
   max-height: 600px;
   color: #000000;
 }
@@ -71,7 +78,7 @@
   font-weight: bold;
 }
 
-.accordion > div.on .acc_title {
+.accordion > ul > li.on .acc_title {
   background-color: var(--main_c4);
 }
 
@@ -79,18 +86,13 @@
   /* padding: 0 1rem; */
   display: flex;
   justify-content: space-between;
+  background-color: #ffffff;
 }
 .acc_detail > * {
   /* border: 1px solid blue; */
 }
 
 /* <----------------------------------달력 영역 ---------------------------------> */
-.calendar {
-  width: 50%;
-}
-.times {
-  width: 50%;
-}
 
 /* @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap"); */
 
@@ -114,6 +116,7 @@
 }
 
 .calendar {
+  width: 50%;
   font-family: "Noto Sans KR", sans-serif;
   position: relative;
   max-width: 700px; /*change as per your design need */
@@ -263,33 +266,56 @@
 
 /* <--------------------times(회차정보) 영역 ------------------> */
 .times {
+  width: 50%;
   background-color: #ffffff;
   color: #000000;
+  display: flex;
+  flex-direction: column;
 }
 
-.times > div {
-  padding: 0.5rem;
+.times > div:first-of-type {
+  padding: 0.75rem;
+  font-weight: bold;
   /* border: 1px solid rebeccapurple; */
 }
 
 .times_title {
-  /* padding: 0.5rem; */
+  padding: 0.5rem 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   border-top: 1px solid #333333;
   border-bottom: 1px solid #333333;
 }
+.times_title span {
+  width: 25%;
+  text-align: center;
+  font-weight: bold;
+}
 
-.times_detail > li {
-  padding: 1rem 0.5rem;
+.times_list > label {
   border-bottom: 1px dotted #333333;
-}
-.times_detail > li > label {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+.times_list > label > * {
+  width: 25%;
+  text-align: center;
 }
 
-/* <--------------------인원선택 영역 ------------------> */
+.reserv_next {
+  width: 100px;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  background-color: var(--main_c4);
+  font: var(--font4);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  align-self: center;
+}
+
+/* <-------------------------- 인원선택 영역 ---------------------------> */
 .howmany {
   background-color: #ffffff;
 }
@@ -297,4 +323,80 @@
 .howmany > .acc_detail {
   padding: 2rem 3rem;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.caution {
+  /* border: 1px solid red; */
+  width: 70%;
+}
+.caution p:first-of-type {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.count {
+  /* border: 1px solid red; */
+  width: 30%;
+  text-align: center;
+}
+.count input {
+  width: 50px;
+}
+
+.howmany .reserv_next {
+  margin-top: 2rem;
+}
+
+/* <-------------------------- 개인정보입력 영역 ---------------------------> */
+.personal {
+  background-color: #ffffff;
+}
+
+.personal > .acc_detail {
+  padding: 2rem 3rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.personal_info {
+  width: 50%;
+  position: relative;
+  padding-right: 1rem;
+}
+.personal_info::after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background-color: #555555;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.personal_info > p {
+  padding: 0.5rem 0;
+}
+.pinfo_desc {
+  font: var(--font2);
+}
+
+.policy {
+  width: 50%;
+  padding-left: 2rem;
+}
+.policy h3 {
+  font-weight: bold;
+}
+.policy h4 {
+  font-weight: bold;
+}
+.policy span {
+  font: var(--font2);
+}
+
+.personal .reserv_next {
+  margin-top: 2rem;
 }

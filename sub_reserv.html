@@ -23,45 +23,44 @@
     />
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/sub_reserv.css" />
-    <script src="./include.js"></script>
-    <script src="./css/common.js" defer></script>
-    <script src="./css/sub_reserv.js" defer></script>
+    <script src="./js/include.js"></script>
+    <script src="./js/common.js" defer></script>
+    <script src="./js/sub_reserv.js" defer></script>
   </head>
   <body>
     <div class="top_banner"></div>
     <header class="hd mw"></header>
 
     <main class="reserv mw">
-      <div class="title">예약마당</div>
+      <h2 class="title">예약마당</h2>
       <section class="reserv_con">
         <ul class="menu">
-          <li>관람 예약</li>
+          <li class="on">관람 예약</li>
           <li>전시해설 예약</li>
           <li>특별 프로그램 예약</li>
           <li>봉사활동 예약</li>
         </ul>
-        <ul class="contents">
-          <li class="con_list on">
-            <ul class="sort">
-              <li class="on">개인</li>
-              <li>단체</li>
-            </ul>
+        <section class="contents">
+          <div class="sort">
+            <input type="button" value="개인" class="on">
+            <input type="button" value="단체">
+          </div>
+          <div class="accordion">
             <ul>
-              <li class="accordion on">
-                <div class="when">
-                  <div class="acc_title">1. 날짜 및 회차 선택</div>
-                  <div class="acc_detail">
+              <li class="when on">
+                <div class="acc_title">1. 날짜 및 회차 선택</div>
+                <div class="acc_detail">
                     <div class="calendar"></div>
                     <div class="times">
-                      <div>선택한 날짜</div>
-                      <div class="times_title">
+                      <div>회차 선택</div>
+                      <p class="times_title">
                         <span>선택</span>
                         <span>회차</span>
                         <span>시간</span>
                         <span>예약상태</span>
-                      </div>
-                      <ul class="times_detail">
-                        <li>
+                      </p>
+                      <ul>
+                        <li class="times_list">
                           <label>
                             <input type="radio" name="time" />
                             <span>1</span>
@@ -69,7 +68,7 @@
                             <span>예약가능</span>
                           </label>
                         </li>
-                        <li>
+                        <li class="times_list">
                           <label>
                             <input type="radio" name="time" />
                             <span>2</span>
@@ -77,7 +76,7 @@
                             <span>예약가능</span>
                           </label>
                         </li>
-                        <li>
+                        <li class="times_list">
                           <label>
                             <input type="radio" name="time" />
                             <span>3</span>
@@ -85,7 +84,7 @@
                             <span>예약가능</span>
                           </label>
                         </li>
-                        <li>
+                        <li class="times_list">
                           <label>
                             <input type="radio" name="time" />
                             <span>4</span>
@@ -93,7 +92,7 @@
                             <span>예약가능</span>
                           </label>
                         </li>
-                        <li>
+                        <li class="times_list">
                           <label>
                             <input type="radio" name="time" />
                             <span>5</span>
@@ -101,7 +100,7 @@
                             <span>예약가능</span>
                           </label>
                         </li>
-                        <li>
+                        <li class="times_list">
                           <label>
                             <input type="radio" name="time" />
                             <span>6</span>
@@ -110,14 +109,15 @@
                           </label>
                         </li>
                       </ul>
+                      <input type="button" value="확인" class="reserv_next">
                     </div>
-                  </div>
                 </div>
-                <div class="howmany on">
-                  <div class="acc_title">2. 인원 선택</div>
-                  <div class="acc_detail">
-                    <div>
-                      <strong>유의사항</strong>
+              </li>
+              <li class="howmany">
+                <div class="acc_title">2. 인원 선택</div>
+                <div class="acc_detail">
+                  <div class="caution">
+                      <p>유의사항</p>
                       <p>
                         예약 변경 및 취소는 방문 예정일 1일 전까지 가능합니다.
                         <br />
@@ -127,39 +127,57 @@
                         관람으로 예약해주시기 바랍니다. <br />
                         입장 마감시간은 예약시간 이후 10분 후 입니다.
                       </p>
-                    </div>
-                    <div>
-                      <span>예약인원</span>
+                  </div>
+                  <div class="count">
+                      <span>예약인원 : </span>
                       <input type="text" />
                       <span>명</span>
-                    </div>
                   </div>
-                </div>
-                <div class="personal">
-                  <div class="acc_title">3. 개인정보 입력</div>
-                  <div class="acc_detail">개인정보 들어가는곳</div>
+                  <input type="button" value="확인" class="reserv_next">
                 </div>
               </li>
-              <li class="accordion">
-                <div>
-                  <div class="acc_title">1. 날짜 및 회차 선택</div>
-                  <div class="acc_detail">달력 및 회차 들어가는곳</div>
-                </div>
-                <div>
-                  <div class="acc_title">2. 인원 선택</div>
-                  <div class="acc_detail">인원 들어가는곳</div>
-                </div>
-                <div>
-                  <div class="acc_title">3. 개인정보 입력</div>
-                  <div class="acc_detail">개인정보 들어가는곳</div>
+              <li class="personal">
+                <div class="acc_title">3. 개인정보 입력</div>
+                <div class="acc_detail">
+                  <div class="personal_info">
+                      <p>예약자명 <input type="text" /></p>
+                      <p>연락처 <input type="text" /></p>
+                      <p>이메일 <input type="text" /></p>
+                      <p>비밀번호 <input type="text" /></p>
+                      <p>비밀번호 확인 <input type="text" /></p>
+                      <div class="pinfo_desc">
+                        <p>&#8226; 이메일 : 예약내역이 발송됩니다. 실제로 사용하는 이메일을 입력해주세요.</p>
+                        <p>&#8226; 예약확인 : 이메일과 예약시 설정하신 비밀번호를 이용하여 확인가능합니다. 본인만 아는 정보를 입력해주세요.</p>
+                      </div>
+                  </div>
+                  <div class="policy">
+                      <h3>개인정보 수집 및 이용동의</h3>
+                      <p>
+                        <h4>정보의 수집, 이용 목적</h4>
+                        <span>“대전시민천문대"이(가) 수집하는 사용자의 개인정보는
+                          교육/관람 예약 서비스를 위한 목적으로 수집하며 <br />
+                          이 외의 목적으로 일체 사용하지 않습니다.</span>
+                      </p>
+                      <p>
+                        <h4>개인정보의 수집범위</h4>
+                        <span>“대전시민천문대"이(가) 교육/관람 예약 서비스를 위한 목적으로 수집하는 개인정보는 다음과 같습니다. <br>
+                          필수항목 : 이름, 비밀번호, 이메일주소, 연락처</span>
+                      </p>
+                      <p>
+                        <h4>개인정보 보유기간</h4>
+                        <span>개인정보는 정보 확인 후 1년 이내 파기됩니다.</span>
+                      </p>
+                      <p>
+                        <span>위 내용에 동의하지 않을 시 서비스 이용이 제한될 수 있습니다.</span>
+                        <p><label><input type="checkbox"> 위 내용에 동의하며 개인정보를 제공합니다.</label></p>
+                      </p>
+                  </div>
+                  <input type="button" value="예약신청" class="reserv_next">
                 </div>
               </li>
             </ul>
-          </li>
-          <li class="con_list">컨텐츠2</li>
-          <li class="con_list">컨텐츠3</li>
-          <li class="con_list">컨텐츠4</li>
-        </ul>
+          </div>
+        </section>
       </section>
     </main>
 
