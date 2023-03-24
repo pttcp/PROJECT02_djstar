@@ -170,7 +170,7 @@ body a {
 }
 
 /* <--------------------------- main 영역 시작 ---------------------------> */
-.main {
+/* .main {
   display: grid;
   grid-template-columns: 1fr 350px;
   grid-template-rows: 1fr 2fr 2fr;
@@ -180,6 +180,15 @@ body a {
     "facility popup";
   gap: 2rem;
   margin-bottom: 3rem;
+} */
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-auto-rows: 150px; */
+  gap: 2rem;
+  margin-bottom: 3rem;
+  /* grid-auto-flow: dense; */
 }
 .main > * {
   /* border: 1px solid red; */
@@ -187,11 +196,14 @@ body a {
 
 /* <--------------------------- sec 영역 시작 ---------------------------> */
 .sec {
-  grid-area: sec;
+  /* grid-area: sec; */
+  grid-column: span 3;
+  grid-row: span 3;
   display: flex;
   flex-direction: column;
   justify-content: end;
   align-items: flex-start;
+  /* border: 1px solid lightblue; */
 }
 .sec > * {
   padding-top: 1rem;
@@ -230,6 +242,7 @@ body a {
   padding: 2rem 2.5rem;
   font-size: 1.5rem;
   font-weight: bold;
+  margin-top: 0.5rem;
 }
 .banner_con a:first-of-type {
   background-image: url(../image/banner_1.jpg);
@@ -293,7 +306,7 @@ body a {
 /* <--------------------------- weather 영역 시작 ---------------------------> */
 
 .weather {
-  grid-area: weather;
+  /* grid-area: weather; */
   padding: 1rem;
   background-color: var(--main_c1);
 }
@@ -340,9 +353,11 @@ body a {
 /* <--------------------------- notice 영역 시작 ---------------------------> */
 
 .notice {
-  grid-area: notice;
+  /* grid-area: notice; */
+  grid-row: span 2;
   padding: 1rem;
   background-color: var(--main_c1);
+  max-width: 350px;
 }
 
 .notice > a {
@@ -378,7 +393,6 @@ body a {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 0;
-  /* border: 1px solid hotpink; */
   width: 100%;
   border-bottom: 1px solid #ffffff;
   margin-bottom: 0.5rem;
@@ -387,14 +401,14 @@ body a {
   background-color: #99999930;
 }
 
-.noti_list > li p:first-of-type {
+.noti_list > li span:first-of-type {
   /* border: 1px solid tomato; */
   width: 75%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.noti_list > li p:last-of-type {
+.noti_list > li span:last-of-type {
   /* border: 1px solid tomato; */
 }
 .noti_list > li a {
@@ -408,7 +422,9 @@ body a {
 /* <--------------------------- facility 영역 시작 ---------------------------> */
 
 .facility {
-  grid-area: facility;
+  /* grid-area: facility; */
+  grid-column: span 3;
+  grid-row: span 2;
   padding: 1rem;
   background-color: var(--main_c1);
 }
@@ -423,6 +439,7 @@ body a {
 .facil_con {
   /* border: 1px solid saddlebrown; */
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   padding: 1rem 0;
 }
@@ -480,16 +497,26 @@ body a {
 
 /* <--------------------------- popup_zone 영역 시작 ---------------------------> */
 .popup_zone {
-  grid-area: popup;
+  /* grid-area: popup; */
+  grid-row: span 2;
   padding: 1rem;
   background-color: var(--main_c1);
   position: relative;
+  /* width: 100%; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  max-width: 350px;
 }
 .popup_zone > p {
   border-bottom: 1px solid #ffffff;
   font: var(--font1);
   padding-bottom: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.slide1 {
+  /* border: 1px solid lightgreen; */
 }
 
 .swiper-slide {
@@ -511,7 +538,7 @@ body a {
   font: var(--font3);
 }
 .swiper-slide a {
-  border: 1px solid green;
+  /* border: 1px solid red; */
   position: absolute;
   width: 100%;
   height: 100%;
@@ -572,6 +599,10 @@ body a {
   width: 100%;
 }
 
+.ft_desc {
+  padding: 0 1rem;
+}
+
 .shortcut > * {
   display: block;
   padding: 0.5rem;
@@ -600,18 +631,14 @@ body a {
     right: 0;
     z-index: 100;
   }
-  .hd.on .logo,
+
   .hd.on .gnb,
   .hd.on .hd_icons,
   .hd.on .ham {
     position: fixed;
     z-index: 1000;
-    /* display: block; */
   }
-  .hd.on .logo {
-    top: 2rem;
-    left: 2rem;
-  }
+
   .hd.on .gnb {
     display: flex;
     flex-direction: column;
@@ -624,10 +651,22 @@ body a {
     border: 1px solid red;
     width: 100%;
   }
+  .gnb::after {
+    display: none;
+  }
+
+  /* .sub {
+    display: none;
+    flex-direction: column;
+  } */
+  .sub.on {
+    /* display: block; */
+    /* height: 300px; */
+  }
 
   .hd.on .hd_icons {
-    top: 1.5rem;
-    right: 6rem;
+    top: 1.8rem;
+    right: 150px;
     display: flex;
   }
 
@@ -639,51 +678,83 @@ body a {
     color: #ffffff;
     font-size: 2rem;
     cursor: pointer;
-    right: 2rem;
-    top: 2rem;
+    right: 1rem;
+    top: 2.5rem;
   }
 
-  /* .main {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+  .main {
+    margin-bottom: 3rem;
   }
-  .sec {
-    border: 1px solid yellow;
-    grid-column: 1/4;
-    order: 1;
-  }
-  .weather {
-    order: 2;
-  } */
 
-  /* .main {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 2fr 1fr 1fr;
-    grid-template-areas:
-      "a a a"
-      "b c d"
-      "e e e";
+  .sec > p:first-of-type {
+    font-size: 1.5rem;
   }
-  .sec {
-    grid-area: a;
-    order: 1;
+  .sec > p:last-of-type {
+    font-size: 3rem;
   }
-  .weather {
-    grid-area: b;
-    order: 2;
+
+  .facil_con > div {
+    width: calc(100% / 2);
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+  }
+  .facil_con > div:nth-of-type(3),
+  .facil_con > div:nth-of-type(4) {
+    margin-top: 0.5rem;
+  }
+  .facil_con > div > * {
+    padding-right: 0.5rem;
+  }
+
+  .img_con {
+    width: 70%;
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sec > p:last-of-type::after {
+    display: none;
+  }
+  .weather_con {
+    justify-content: space-around;
   }
   .notice {
-    grid-area: c;
-    order: 3;
-  }
-  .popup_zone {
-    grid-area: d;
-    order: 4;
+    max-width: 100%;
   }
   .facility {
-    grid-area: e;
-    order: 5;
-  } */
+    order: 2;
+  }
+  .popup_zone {
+    max-width: 100%;
+  }
+
+  .ft_wrap {
+    flex-direction: column;
+  }
+  .ft_wrap > * {
+    margin-bottom: 0.5rem;
+  }
+  .shortcut {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .shortcut > * {
+    /* padding: 1rem; */
+    height: 40px;
+    margin-right: 0.5rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .facil_con > div {
+    width: calc(100%);
+    margin-top: 0.5rem;
+  }
 }

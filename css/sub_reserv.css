@@ -4,7 +4,7 @@
 }
 
 .reserv > * {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .title {
@@ -31,8 +31,10 @@
 }
 .menu > li.on {
   border: 2px solid var(--main_c4);
-  color: #000000;
   background-color: var(--main_c4);
+}
+.menu > li.on > a {
+  color: #000000;
 }
 
 .con_list {
@@ -107,7 +109,7 @@
   --calendar-nextprev-bg-color: transparent;
   --next-prev-arrow-color: #000;
   --calendar-border-radius: 16px;
-  --calendar-prevnext-date-color: #484848;
+  --calendar-prevnext-date-color: #999999;
 }
 
 * {
@@ -376,8 +378,17 @@
   top: 0;
   right: 0;
 }
-.personal_info > p {
-  padding: 0.5rem 0;
+.personal_info > div {
+  padding: 0.75rem 0;
+}
+.personal_info > div > span {
+  /* border: 1px solid red; */
+  display: inline-block;
+  width: 120px;
+  font-weight: bold;
+}
+.personal_info input {
+  height: 1.5rem;
 }
 .pinfo_desc {
   font: var(--font2);
@@ -389,9 +400,22 @@
 }
 .policy h3 {
   font-weight: bold;
+  padding: 1rem 0;
+}
+.policy > div {
+  padding-bottom: 0.5rem;
+}
+.policy > div:last-of-type {
+  padding: 1rem 0;
+}
+.policy > div:last-of-type p {
+  /* border: 1px solid red; */
+  margin-top: 1rem;
+  font-weight: bold;
 }
 .policy h4 {
   font-weight: bold;
+  padding-bottom: 0.3rem;
 }
 .policy span {
   font: var(--font2);
