@@ -709,7 +709,7 @@ body a {
   .hd.on .gnb {
     /* display: flex; */
     /* flex-direction: column; */
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     display: block;
     right: 0;
     top: 120px;
@@ -717,11 +717,11 @@ body a {
     margin: auto;
   }
   .hd.on .gnb > li {
-    border: 1px solid hotpink;
+    /* border: 1px solid hotpink; */
     /* width: 100%; */
   }
   .hd.on .gnb > li > a {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: block;
     width: 100%;
     padding: 1rem;
