@@ -1,11 +1,32 @@
 const $ham = document.querySelector(".ham");
 const $hd = document.querySelector(".hd");
-const $gnbLi = document.querySelectorAll(".gnb>li");
-// const $subMenu = $gnbLi.querySelectorAll(".sub");
 
 $ham.addEventListener("click", () => {
   $hd.classList.toggle("on");
 });
+
+const menuList = document.querySelectorAll(".gnb>li>a");
+const subMenu = document.querySelectorAll(".sub");
+
+menuList.forEach((item) => {
+  item.addEventListener("click", function (e) {
+    subMenu.forEach((i) => {
+      i.classList.remove("on");
+    });
+    let submenu = item.nextElementSibling;
+    // submenu.forEach(function (child) {
+    //   child.classList.add("on");
+    // });
+    submenu.classList.add("on");
+  });
+});
+
+// menuList.forEach((mainMenu) => {
+//   mainMenu.addEventListener("click", (e) => {
+//     e.preventDefault();
+//   });
+// });
+
 // $gnbLi.forEach((menu) => {
 //   menu.addEventListener("click", () => {
 //     $subMenu.classList.toggle("on");
