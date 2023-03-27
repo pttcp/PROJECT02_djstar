@@ -733,7 +733,6 @@ body a {
     padding: 1rem;
     font-size: 0.9rem;
     position: relative;
-    /* margin-bottom: 1rem; */
   }
   .sub > li > a {
     display: block;
